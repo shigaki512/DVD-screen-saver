@@ -1,0 +1,33 @@
+.container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.bouncing-text {
+    border: none; 
+    background: none;
+    position: absolute;
+    width: 300px;
+    height: 100px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 48px;
+    font-weight: bold;
+    color: #fff;
+    animation: 
+        move-x 10s linear infinite alternate,  /* 横方向: 10秒で往復 */
+        move-y 15s linear infinite alternate; /* 縦方向: 15秒で往復 (速度差で斜め移動風に) */
+}
+
+@keyframes move-x {
+    from { left: 0; }
+    to { left: calc(100% - 200px); }
+}
+
+@keyframes move-y {
+    from { top: 0; }
+    to { top: calc(100% - 50px); }
+}
